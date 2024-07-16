@@ -1,0 +1,36 @@
+<InstagramLoginScreen>:
+    name: "instagram_login"
+
+    MDBoxLayout:
+        orientation: "vertical"
+
+        MDToolbar:
+            title: "Instagram Login"
+            md_bg_color: app.theme_cls.primary_color
+
+        MDLabel:
+            text: "Please enter your username and password"
+            font_size: "18sp"
+            color: app.theme_cls.text_color
+
+        MDTextField:
+            id: username
+            hint_text: "Username"
+
+        MDTextField:
+            id: password
+            hint_text: "Password"
+            password: True
+
+        MDBoxLayout:
+            orientation: "horizontal"
+            size_hint_y: None
+            height: "40dp"
+
+            MDButton:
+                text: "Login"
+                on_press: app.login()
+
+            MDButton:
+                text: "Cancel"
+                on_press: app.root.current = "home"
